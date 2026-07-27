@@ -392,17 +392,22 @@ Setting up Express API to listens for requests from the frontend.
 
 Folder structure:
 
+```
 - src
  - config 
  - routes
  - services
  - models
+```
 
 File Structure
 
+```
 - userModel.js
 - userRoutes.js
 - userService.js
 - server.js
+
+```
 
 
