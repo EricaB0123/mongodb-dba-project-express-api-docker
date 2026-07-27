@@ -72,6 +72,8 @@ unable to get image 'mongo:latest': error during connect: Get "http://%2F%2F.%2F
 Soloution:
 After the computer is restarted, ensure the docker container image is up and running.
 
+
+
 ### Connecting to Mongo via Visual Studio 
 
 1. Install the MongoDB extension
