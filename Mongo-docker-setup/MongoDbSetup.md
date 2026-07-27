@@ -69,7 +69,7 @@ PS \mongodb\mongodb-mongodb-api-mini-project\Mongo-docker-setup> docker-compose 
 time="2026-07-28T00:19:06+12:00" level=warning msg="\\mongodb\\mongodb-mongodb-api-mini-project\\Mongo-docker-setup\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 unable to get image 'mongo:latest': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/mongo:latest/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
 
-Soloution:
+Solution:
 After the computer is restarted, ensure the docker container image is up and running.
 
 
@@ -386,7 +386,7 @@ basicsDB> db.users.find({ city: "Nelson" }).explain("executionStats")
    - After creating an index on city, MongoDB switched from a COLLSCAN (scanning all documents) to an IXSCAN → FETCH plan. It examined only 2 index keys and 2 documents, instead of scanning the entire collection.
 
 
-
+### Node.js adn Express API setup
 
 
 
