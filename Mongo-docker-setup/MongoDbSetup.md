@@ -406,6 +406,8 @@ basicsDB> db.users.find({ city: "Nelson" }).explain("executionStats")
 
 # Node.js and Express API setup
 
+## Express Setup
+
 Setting up Express API to listens for requests from the frontend.
 
 Folder structure:
