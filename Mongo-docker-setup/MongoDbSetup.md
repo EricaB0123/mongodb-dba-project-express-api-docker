@@ -1,6 +1,24 @@
 
 # Mongodb setup 
 
+## Table of Contents
+- [Overview](#overview)
+- [What is set up right now](#what-is-set-up-right-now)
+- [What this means](#what-this-means)
+- [Docker Setup](#docker-setup)
+  - [Example of the Container Configuration within Docker GUI](#example-of-the-container-configuration-within-docker-gui)
+  - [Example of the Container Running within Docker](#example-of-the-container-running-within-docker)
+  - [Problem solving Docker Connection issues](#problem-solving-docker-connection-issues)
+- [Connecting to Mongo via Visual Studio](#connecting-to-mongo-via-visual-studio)
+- [Example using the MongoDB extension via VisualStudioCode](#example-using-the-mongodb-extension-via-visualstudiocode)
+- [Connect to the Database and Check Data exists](#connect-to-the-database-and-check-data-exists)
+- [Database get setup](#database-get-setup)
+- [Express Setup](#express-setup)
+
+---
+
+## Overview
+
 ## This section covers the Docker and MongoDB setup
 - running MongoDB in Docker
 - connecting to MongoDB
@@ -386,7 +404,7 @@ basicsDB> db.users.find({ city: "Nelson" }).explain("executionStats")
    - After creating an index on city, MongoDB switched from a COLLSCAN (scanning all documents) to an IXSCAN → FETCH plan. It examined only 2 index keys and 2 documents, instead of scanning the entire collection.
 
 
-### Node.js and Express API setup
+# Node.js and Express API setup
 
 Setting up Express API to listens for requests from the frontend.
 
