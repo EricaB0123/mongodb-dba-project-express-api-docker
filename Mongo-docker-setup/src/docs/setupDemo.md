@@ -1,0 +1,3 @@
+S C:\Users\erica\Downloads\mongodb\mongodb-mongodb-api-mini-project\Mongo-docker-setup> docker-compose up -d
+time="2026-07-28T00:19:06+12:00" level=warning msg="C:\\Users\\erica\\Downloads\\mongodb\\mongodb-mongodb-api-mini-project\\Mongo-docker-setup\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+unable to get image 'mongo:latest': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/mongo:latest/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.

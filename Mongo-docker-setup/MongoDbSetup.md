@@ -63,6 +63,15 @@ docker compose up -d
 
 ```
 
+#### Problem solving Docker Connection issues
+
+PS \mongodb\mongodb-mongodb-api-mini-project\Mongo-docker-setup> docker-compose up -d
+time="2026-07-28T00:19:06+12:00" level=warning msg="\\mongodb\\mongodb-mongodb-api-mini-project\\Mongo-docker-setup\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+unable to get image 'mongo:latest': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/mongo:latest/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+
+Soloution:
+After the computer is restarted, ensure the docker container image is up and running.
+
 ### Connecting to Mongo via Visual Studio 
 
 1. Install the MongoDB extension
