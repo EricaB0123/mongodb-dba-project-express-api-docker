@@ -26,6 +26,8 @@ A hands‑on mini‑project demonstrating how to run MongoDB in Docker, connect 
   - Indexing strategies
 
 ## Project Structure
+
+```
 Code
 mongodb- mongodb- api- mini- project/
 │
@@ -34,13 +36,17 @@ mongodb- mongodb- api- mini- project/
 │
 ├── src/                # API source code (in progress)
 │   ├── routes/
-│   ├── controllers/
+│   ├── config/
 │   ├── models/
+│   ├── seeds/
+│   ├── services/
 │   └── server.js
 │
 ├── screenshots/        # Docker, VS Code, API examples
 │
 └── README.md
+
+```
 
 ## API Endpoints (Coming Soon)
 The API will expose the following:
