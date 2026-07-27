@@ -7,6 +7,6 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-mongodb/mongodb-mongodb-api-mini-project/Mongo-docker-setup/src/scripts/
+mongodb/mongodb-mongodb-api-mini-project/Mongo-docker-setup/scripts/
 #added src to ignore the src folder, which is where the source code is located. This is useful if you want to keep your source code private or if you are using a build process that generates files in this directory.   Have added a private repo which can be requested to view.
 
