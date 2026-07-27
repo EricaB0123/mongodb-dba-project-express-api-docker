@@ -25,6 +25,16 @@ A hands‑on mini‑project demonstrating how to run MongoDB in Docker, connect 
 - Creating collections and inserting documents
 - See: Mongo-docker-setup/MongoDbSetup.md for detailed steps.
 
+- [Docker Setup](#docker-setup)
+  - [Example of the Container Configuration within Docker GUI](#example-of-the-container-configuration-within-docker-gui)
+  - [Example of the Container Running within Docker](#example-of-the-container-running-within-docker)
+  - [Problem solving Docker Connection issues](#problem-solving-docker-connection-issues)
+- [Connecting to Mongo via Visual Studio](#connecting-to-mongo-via-visual-studio)
+- [Example using the MongoDB extension via VisualStudioCode](#example-using-the-mongodb-extension-via-visualstudiocode)
+- [Connect to the Database and Check Data exists](#connect-to-the-database-and-check-data-exists)
+- [Database get setup](#database-get-setup)
+- [Express Setup](#express-setup)
+
 ## Project Structure
 Code
 mongodb- mongodb- api- mini- project/
