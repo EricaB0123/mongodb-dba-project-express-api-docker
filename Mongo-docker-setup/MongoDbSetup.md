@@ -386,7 +386,7 @@ basicsDB> db.users.find({ city: "Nelson" }).explain("executionStats")
    - After creating an index on city, MongoDB switched from a COLLSCAN (scanning all documents) to an IXSCAN → FETCH plan. It examined only 2 index keys and 2 documents, instead of scanning the entire collection.
 
 
-### Node.js adn Express API setup
+### Node.js and Express API setup
 
 
 
