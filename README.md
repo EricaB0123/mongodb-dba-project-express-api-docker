@@ -83,7 +83,7 @@ GET /items/search — Text search
 ### Indexing Demo
 - Creating indexes
 - Measuring performance differences
-documentation and diagrams:
+- documentation and diagrams:
 https://github.com/EricaB0123/mongodb-mongodb-api-mini-project/tree/main/Mongo-docker-setup/docs
 
 ## Testing (Planned)
