@@ -71,7 +71,7 @@ DELETE /items/:id — Delete
 
 ```
 
-##Aggregation Examples
+## Aggregation Examples
 
 ```
 GET /items/stats — Basic pipeline
