@@ -475,3 +475,34 @@ testQueries.js
 
 ```
 
+##### Changes in the Route files.
+
+instead of:
+
+```
+// POST /users/index/city
+router.post("/index/city", async (req, res) => {
+  const result = await createCityIndex(req.db);
+  res.json({ message: "City index created", result });
+});
+
+
+```
+for example:
+
+```
+import { Router } from "express";
+import * as userController from "../controllers/userController.js";
+
+const router = Router();
+
+router.post("/", userController.createUser);
+router.get("/city/:city", userController.getUsersByCity);
+router.post("/index/city", userController.createCityIndex);
+
+export default router;
+```
+
+Routes become declarative. It creates a modular structure, to handle a GET request to a specific URL (getUsersByCity, etc). Express will then have a simplified process of defining and managing routes.
+
+
