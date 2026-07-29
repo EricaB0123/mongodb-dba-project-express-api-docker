@@ -418,16 +418,60 @@ Folder structure:
  - routes
  - services
  - models
+ - seeds
 ```
 
 File Structure
 
 ```
+- mongoClient.js
+- server.js
 - userModel.js
 - userRoutes.js
 - userService.js
 - server.js
+- testQueries
+- seedUsers
+```
+### Problem Solving Node.js connection to Mongo
+
+##### .env File
+<img width="1383" height="198" alt="Express_MongoDb_Connection_Issue_CannotInsert" src="https://github.com/user-attachments/assets/04b377c3-b9bc-4be1-a29b-493c3954fd34" />
+
+Making sure the .env.express file is separate to the docker .env file.
+specifying the MONGO_URI so that the mongoClient can pick up the right connection string.
+
+Once that was sorted, was able to test some data seeding.
+
+<img width="810" height="123" alt="Inserted Data Using Seeds js File" src="https://github.com/user-attachments/assets/034b4407-5aa6-4ea3-8472-4d5d08bf1e0f" />
+
+
+### current setup (simple, functional)
+
+```
+config/mongoClient.js
+routes/userRoutes.js
+services/userService.js
+server.js
+seeds/seedUsers.js
+testQueries.js
 
 ```
 
+Was able to test the current setup, which makes use of a minimal Express API. The next approach is a production‑style Express API with proper layering.
+
+
+### Next setup (industry-standard layering)
+
+```
+config/mongoClient.js
+models/userModel.js
+routes/userRoutes.js
+controllers/userController.js   ← new layer
+services/userService.js
+server.js
+seeds/seedUsers.js
+testQueries.js
+
+```
 
