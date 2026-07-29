@@ -1,6 +1,8 @@
 # MongoDB Mini Project — Docker + API (In Progress)
 
-A hands‑on mini‑project demonstrating how to run MongoDB in Docker, connect via VS Code, design collections, and (soon) expose CRUD and aggregation operations through a Node.js API. This project is part of my transition from Senior Database Administrator to Data Platform Engineer, showcasing modern data‑platform tooling, containerisation, and NoSQL fundamentals.
+This project is part of my journey from Senior DBA to Data Platform Engineer, where I’m building hands‑on experience with containerised databases, NoSQL modelling, and API development.
+
+I’m running MongoDB in Docker, exploring collections through VS Code, and building a Node.js API that will expose CRUD, indexing, and aggregation pipelines. A cloud version using MongoDB Atlas is planned.
 
 ##  Project Goals
 - Build a containerised MongoDB environment using Docker
@@ -10,16 +12,24 @@ A hands‑on mini‑project demonstrating how to run MongoDB in Docker, connect 
 - Demonstrate indexing and aggregation pipelines (planned)
 - Deploy a cloud version using MongoDB Atlas (planned)
 
-##  Tech Stack
-- MongoDB Community Edition (Docker container)
+##  Project Objectives
+- Run MongoDB locally using Docker
+- Connect and manage collections via the VS Code MongoDB extension
+- Design collections and seed sample documents
+- Build a Node.js + Express API for CRUD operations (in progress)
+- Add indexing and aggregation pipeline examples (in progress)
+- Deploy a cloud version using MongoDB Atlas (planned)
+
+## Tech Stack
+- MongoDB Community Edition (Docker)
 - Docker Desktop
 - VS Code MongoDB Extension
-- Node.js + Express API (coming soon)
+- Node.js + Express (API)
 - MongoDB Atlas (planned)
 
 ## Docker Setup
-- The project includes a full Docker setup for running MongoDB locally
-- See [**Mongo Docker Setup Guide**](Mongo-docker-setup/MongoDbSetup.md) for detailed steps covering:
+- A full local MongoDB environment is included.
+See [**Mongo Docker Setup Guide**](Mongo-docker-setup/MongoDbSetup.md) for detailed steps covering:
   - Pulling MongoDB image & running containers
   - Connecting via VS Code
   - Creating collections and inserting documents
@@ -28,10 +38,9 @@ A hands‑on mini‑project demonstrating how to run MongoDB in Docker, connect 
 ## Project Structure
 
 ```
-Code
-mongodb- mongodb- api- mini- project/
+mongodb-mongodb-api-mini-project/
 │
-├── Mongo- docker- setup/
+├── Mongo-docker-setup/
 │   └── MongoDbSetup.md
 │
 ├── src/                # API source code (in progress)
@@ -42,37 +51,40 @@ mongodb- mongodb- api- mini- project/
 │   ├── services/
 │   └── server.js
 │
-├── screenshots/        # Docker, VS Code, API examples
+├── screenshots/
 │
 └── README.md
 
+
+
 ```
 
-## API Endpoints (Coming Soon)
-The API will expose the following:
+## API Endpoints (In progress)
 
+```
 CRUD
 POST /items — Create
-
 GET /items — Read all
-
 GET /items/:id — Read one
-
 PUT /items/:id — Update
-
 DELETE /items/:id — Delete
 
-Aggregation Examples
-/items/stats — Basic pipeline
+```
 
-/items/grouped — Grouping + sorting
+## Aggregation Examples
 
-/items/search — Text search
+```
+GET /items/stats — Basic pipeline
+GET /items/grouped — Group + sort
+GET /items/search — Text search
 
-Indexing Demo
-Creating indexes
+```
 
-Measuring performance differences
+### Indexing Demo
+- Creating indexes
+- Measuring performance differences
+- documentation and diagrams:
+https://github.com/EricaB0123/mongodb-mongodb-api-mini-project/tree/main/Mongo-docker-setup/docs
 
 ## Testing (Planned)
 - Postman collection
@@ -92,19 +104,21 @@ Measuring performance differences
 - Screenshots of cloud collections
 - Differences between local Docker vs Atlas
 
-## Architecture Layout  Diagrams/Documentation
+## Architecture & Documentation
+Full documentation and diagrams:
 https://github.com/EricaB0123/mongodb-mongodb-api-mini-project/tree/main/Mongo-docker-setup/docs
-Which includes:
-- Docker container Setup
+
+Includes:
+- Docker container setup
 - VS Code MongoDB extension
 - Sample documents
-- Overall Project 
+- Project overview
 - (Soon) API responses
 - (Soon) Atlas dashboard
 
 
 
-#Roadmap
+## Roadmap
 [x] Docker MongoDB setup
 [x] VS Code MongoDB connection
 [ ] Build Node.js API
