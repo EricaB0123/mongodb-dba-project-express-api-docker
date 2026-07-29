@@ -474,6 +474,12 @@ seeds/seedUsers.js
 testQueries.js
 
 ```
+#### Next setup Logic:
+- Routes → maps the URLs
+- Controllers → handles the HTTP logic
+- Services → handles the Database logic
+- Models → handles the collection access
+- Config → handles the Database connection
 
 ##### Changes in the Route files.
 
