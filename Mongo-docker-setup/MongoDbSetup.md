@@ -446,7 +446,7 @@ Once that was sorted, was able to test some data seeding.
 <img width="810" height="123" alt="Inserted Data Using Seeds js File" src="https://github.com/user-attachments/assets/034b4407-5aa6-4ea3-8472-4d5d08bf1e0f" />
 
 
-##### current setup (simple, functional)
+### current setup (simple, functional)
 
 ```
 config/mongoClient.js
@@ -461,7 +461,7 @@ testQueries.js
 Was able to test the current setup, which makes use of a minimal Express API. The next approach is a production‑style Express API with proper layering.
 
 
-##### Next setup (industry-standard layering)
+### Next setup (industry-standard layering)
 
 ```
 config/mongoClient.js
