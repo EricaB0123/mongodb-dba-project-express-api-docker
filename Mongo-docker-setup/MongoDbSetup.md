@@ -445,3 +445,33 @@ Once that was sorted, was able to test some data seeding.
 
 <img width="810" height="123" alt="Inserted Data Using Seeds js File" src="https://github.com/user-attachments/assets/034b4407-5aa6-4ea3-8472-4d5d08bf1e0f" />
 
+
+##### current setup (simple, functional)
+
+```
+config/mongoClient.js
+routes/userRoutes.js
+services/userService.js
+server.js
+seeds/seedUsers.js
+testQueries.js
+
+```
+
+Was able to test the current setup, which makes use of a minimal Express API. The next approach is a production‑style Express API with proper layering.
+
+
+##### Next setup (industry-standard layering)
+
+```
+config/mongoClient.js
+models/userModel.js
+routes/userRoutes.js
+controllers/userController.js   ← new layer
+services/userService.js
+server.js
+seeds/seedUsers.js
+testQueries.js
+
+```
+
