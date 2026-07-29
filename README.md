@@ -100,10 +100,16 @@ Returns grouped statistics per city:
 - documentation and diagrams:
 https://github.com/EricaB0123/mongodb-mongodb-api-mini-project/tree/main/Mongo-docker-setup/docs
 
+#### example: Create an index on the city field:
+
+```
+POST /users/index/city
+```
+
+This improves query performance for city‑based lookups.
+
 ## Testing (Planned)
-- Postman collection
-- Automated tests using Jest
-- Example API calls
+- Example API calls: https://github.com/EricaB0123/mongodb-mongodb-api-mini-project/tree/main/Mongo-docker-setup/docs
 
 ## Security Considerations
 - .env file for secrets
