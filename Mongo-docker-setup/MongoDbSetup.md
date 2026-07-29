@@ -438,7 +438,7 @@ File Structure
 ##### .env File
 <img width="1383" height="198" alt="Express_MongoDb_Connection_Issue_CannotInsert" src="https://github.com/user-attachments/assets/04b377c3-b9bc-4be1-a29b-493c3954fd34" />
 
-Making sure the .env.express file is separate to the docket .env file.
+Making sure the .env.express file is separate to the docker .env file.
 specifying the MONGO_URI so that the mongoClient can pick up the right connection string.
 
 Once that was sorted, was able to test some data seeding.
