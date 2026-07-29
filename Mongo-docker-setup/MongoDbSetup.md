@@ -474,7 +474,7 @@ testQueries.js
 Was able to test the current setup, which makes use of a minimal Express API. The next approach is a production‑style Express API with proper layering.
 
 
-### Next setup (industry-standard layering)
+### Next setup (Layered Architecture)
 
 ```
 config/mongoClient.js
@@ -494,9 +494,9 @@ testQueries.js
 - Models → handles the collection access
 - Config → handles the Database connection
 
-##### Changes in the Route files.
+##### Route Changes
 
-instead of:
+Before:
 
 ```
 // POST /users/index/city
@@ -507,7 +507,7 @@ router.post("/index/city", async (req, res) => {
 
 
 ```
-for example:
+After:
 
 ```
 import { Router } from "express";
