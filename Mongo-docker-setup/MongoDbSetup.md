@@ -1,18 +1,20 @@
 
-# Mongodb setup 
+# Mongodb setup - Docker + Express API
 
 ## Table of Contents
 - [Overview](#overview)
 - [What is set up right now](#what-is-set-up-right-now)
 - [What this means](#what-this-means)
 - [Docker Setup](#docker-setup)
-  - [Example of the Container Configuration within Docker GUI](#example-of-the-container-configuration-within-docker-gui)
-  - [Example of the Container Running within Docker](#example-of-the-container-running-within-docker)
-  - [Problem solving Docker Connection issues](#problem-solving-docker-connection-issues)
-- [Connecting to Mongo via Visual Studio](#connecting-to-mongo-via-visual-studio)
-- [Example using the MongoDB extension via VisualStudioCode](#example-using-the-mongodb-extension-via-visualstudiocode)
-- [Connect to the Database and Check Data exists](#connect-to-the-database-and-check-data-exists)
+  - [Container Configuration within Docker GUI](#example-of-the-container-configuration-within-docker-gui)
+  - [Container Running within Docker](#example-of-the-container-running-within-docker)
+  - [Troubleshooting Docker Connection issues](#problem-solving-docker-connection-issues)
+- [Connecting to Mongo via VS Code](#connecting-to-mongo-via-visual-studio)
+- [Using the MongoDB extension via VisualStudioCode](#example-using-the-mongodb-extension-via-visualstudiocode)
+- [Connecting to the Database and Checking Data exists](#connect-to-the-database-and-check-data-exists)
 - [Database get setup](#database-get-setup)
+- Index Usage
+- Viewing Query Plans
 - [Express Setup](#express-setup)
 
 ---
@@ -37,8 +39,12 @@
 
 
 ## What this means
-- The MongoDB container is configured and can be started with: docker compose up -d
-- The Visual Studio Code editor should now connect via bash or mongodb extension.
+- The MongoDB container is configured and can be started with:
+```
+ docker compose up -d
+```
+- VS Code can connect using the MongoDB extension
+- You can browse collections, insert documents, and run queries
 
 
 #### Docker Setup
@@ -87,8 +93,7 @@ PS \mongodb\mongodb-mongodb-api-mini-project\Mongo-docker-setup> docker-compose 
 time="2026-07-28T00:19:06+12:00" level=warning msg="\\mongodb\\mongodb-mongodb-api-mini-project\\Mongo-docker-setup\\docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
 unable to get image 'mongo:latest': error during connect: Get "http://%2F%2F.%2Fpipe%2FdockerDesktopLinuxEngine/v1.51/images/mongo:latest/json": open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
 
-Solution:
-After the computer is restarted, ensure the docker container image is up and running.
+Solution: Restart Docker Desktop and ensure the engine is running.
 
 
 
@@ -103,7 +108,7 @@ After the computer is restarted, ensure the docker container image is up and run
 
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/1e98a547-79ff-4f02-8e80-99da016cf8c1" />
 
-### Connect to the Database and Check Data exists
+### Connecting to the Database and Checking Data
 
 I used the Docker Terminal to connect via admin user and Query via the 'basicsDB'.
 
@@ -405,6 +410,14 @@ basicsDB> db.users.find({ city: "Nelson" }).explain("executionStats")
 
 
 # Node.js and Express API setup
+
+Express API connects to MongoDB using .env.express:
+
+```
+MONGO_URI=mongodb://username:password@localhost:27017/basicDB
+DB_NAME=basicDB
+
+```
 
 ## Express Setup
 
