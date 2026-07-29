@@ -8,7 +8,7 @@ I’m running MongoDB in Docker, exploring collections through VS Code, and buil
 - Build a containerised MongoDB environment using Docker
 - Connect and manage MongoDB using VS Code MongoDB extension
 - Design collections and insert sample documents
-- Implement CRUD operations via a Node.js API (in progress)
+- Implement CRUD operations via a Node.js API 
 - Demonstrate indexing and aggregation pipelines (planned)
 - Deploy a cloud version using MongoDB Atlas (planned)
 
@@ -16,7 +16,7 @@ I’m running MongoDB in Docker, exploring collections through VS Code, and buil
 - Run MongoDB locally using Docker
 - Connect and manage collections via the VS Code MongoDB extension
 - Design collections and seed sample documents
-- Build a Node.js + Express API for CRUD operations (in progress)
+- Build a Node.js + Express API for CRUD operations
 - Add indexing and aggregation pipeline examples (in progress)
 - Deploy a cloud version using MongoDB Atlas (planned)
 
@@ -38,47 +38,61 @@ See [**Mongo Docker Setup Guide**](Mongo-docker-setup/MongoDbSetup.md) for detai
 ## Project Structure
 
 ```
-mongodb-mongodb-api-mini-project/
+Mongo-docker-setup/
 │
-├── Mongo-docker-setup/
-│   └── MongoDbSetup.md
+├── server.js
+├── .env.express
 │
-├── src/                # API source code (in progress)
-│   ├── routes/
-│   ├── config/
-│   ├── models/
-│   ├── seeds/
-│   ├── services/
-│   └── server.js
-│
-├── screenshots/
-│
-└── README.md
-
-
-
+└── src/
+    ├── config/
+    │   └── mongoClient.js
+    │
+    ├── models/
+    │   └── userModel.js
+    │
+    ├── controllers/
+    │   └── userController.js
+    │
+    ├── services/
+    │   └── userService.js
+    │
+    ├── routes/
+    │   └── userRoutes.js
+    │
+    └── seeds/
+        ├── seedUsers.js
+        └── testQueries.js
 ```
 
-## API Endpoints (In progress)
+This structure follows a clean, modular Express architecture:
 
-```
-CRUD
-POST /items — Create
-GET /items — Read all
-GET /items/:id — Read one
-PUT /items/:id — Update
-DELETE /items/:id — Delete
+- Routes — define URL endpoints
+- Controllers — handle HTTP logic (status codes, validation, responses)
+- Services — perform database operations
+- Models — provide collection access
+- Config — MongoDB client + environment variables
 
-```
+## API Endpoints 
+
+| Method	| Endpoint	| Description |
+|---------|-----------|-------------|
+|POST	    |  /users	    | Create a new user|
+|GET	    |  	/users	   | Query users (filter, sort, paginate)
+|GET	    |  	/users/city/:city	   | Get users by city
+|POST	    |  	/users/index/city	   | Create index on city field
+|GET	    |  	/users/stats/cities	   | Aggregation pipeline (city stats)
+
+
 
 ## Aggregation Examples
 
 ```
-GET /items/stats — Basic pipeline
-GET /items/grouped — Group + sort
-GET /items/search — Text search
-
+GET /users/stats/cities
 ```
+Returns grouped statistics per city:
+- total users
+- average steps
+- min/max steps
 
 ### Indexing Demo
 - Creating indexes
