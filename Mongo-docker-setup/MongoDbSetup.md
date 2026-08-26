@@ -414,7 +414,7 @@ basicsDB> db.users.find({ city: "Nelson" }).explain("executionStats")
 Express API connects to MongoDB using .env.express:
 
 ```
-MONGO_URI=mongodb://username:password@localhost:27017/basicDB
+MONGO_URI=mongodb://localhost:27017/basicDB
 DB_NAME=basicDB
 
 ```
