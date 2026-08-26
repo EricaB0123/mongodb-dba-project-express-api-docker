@@ -47,9 +47,6 @@ Mongo-docker-setup/
     ├── config/
     │   └── mongoClient.js
     │
-    ├── models/
-    │   └── userModel.js
-    │
     ├── controllers/
     │   └── userController.js
     │
@@ -59,9 +56,13 @@ Mongo-docker-setup/
     ├── routes/
     │   └── userRoutes.js
     │
+    ├── models/
+    │   └── userModel.js
+    │
     └── seeds/
         ├── seedUsers.js
         └── testQueries.js
+
 ```
 
 This structure follows a clean, modular Express architecture:
