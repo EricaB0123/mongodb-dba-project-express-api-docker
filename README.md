@@ -13,12 +13,14 @@ I’m running MongoDB in Docker, exploring collections through VS Code, and buil
 - Deploy a cloud version using MongoDB Atlas (planned)
 
 ##  Project Objectives
-- Run MongoDB locally using Docker
-- Connect and manage collections via the VS Code MongoDB extension
+- Run MongoDB locally using Docker (completed)
+- Connect and manage collections via the VS Code MongoDB extension (completed)
 - Design collections and seed sample documents
-- Build a Node.js + Express API for CRUD operations
-- Add indexing and aggregation pipeline examples (in progress)
+- Build a modular Node.js + Express API for CRUD operations (completed)
+- Add indexing examples (completed)
+- Add aggregation pipeline examples (in progress)
 - Deploy a cloud version using MongoDB Atlas (planned)
+
 
 ## Tech Stack
 - MongoDB Community Edition (Docker)
@@ -140,16 +142,25 @@ Includes:
 
 
 ## Roadmap
-[x] Docker MongoDB setup
-[x] VS Code MongoDB connection
-[ ] Build Node.js API
-[ ] Add CRUD endpoints
-[ ] Add aggregation examples
-[ ] Add indexing examples
-[ ] Add MongoDB Atlas deployment
-[ ] Add Postman collection
-[ ] Add Jest tests
-[ ] Add GitHub Actions CI/CD
+Completed
+- Run MongoDB locally using Docker
+- Connect and manage collections via the VS Code MongoDB extension
+- Design collections and seed sample documents
+- Build a modular Node.js + Express API (routes, controllers, services)
+- Implement CRUD operations
+- Add indexing endpoints (/users/index/city)
+- Create project documentation structure (docs folder)
+
+In Progress
+- Add aggregation pipeline endpoints (/users/stats/cities)
+- Expand API documentation with examples and diagrams
+- Improve error handling and validation
+- Add filtering, sorting, and pagination to GET endpoints
+
+Planned
+- Deploy cloud version using MongoDB Atlas
+- Add Postman collection for API testing
+
 
 ## What I Learned
 -  How MongoDB differs from SQL Server in schema design
