@@ -1,50 +1,99 @@
-A. Add explain endpoints
-Add routes:
+# Performance & Query Optimization
 
-/users/explain/city/:city
+## A. Explain Plan Endpoints
 
-/users/explain/all
+Add the following routes:
 
-Service example:
+- **GET /users/explain/city/:city**  
+- **GET /users/explain/all**
 
-js
+### Service Example
+```js
 const result = await db.collection('users')
   .find({ city })
   .explain('executionStats');
-Document:
+```
 
-COLLSCAN vs IXSCAN
+### Document the following:
 
-executionTimeMillis
+#### COLLSCAN vs IXSCAN
+- **COLLSCAN**: Full collection scan  
+- **IXSCAN**: Uses an index to jump directly to matching documents  
 
-nReturned
+#### Key Execution Metrics
+- **executionTimeMillis** — total time spent executing the query  
+- **nReturned** — number of documents returned  
+- **totalDocsExamined** — number of documents scanned  
+- **totalKeysExamined** — number of index keys scanned  
 
-totalDocsExamined
+---
 
-B. Add compound index testing
-Create index:
+## B. Compound Index Testing
 
-Code
+### Create Compound Index
+```js
 db.users.createIndex({ city: 1, name: 1 })
-Add endpoint:
+```
 
-/users/search?city=Nelson&name=Erica
+### Add Endpoint
+- **GET /users/search?city=Nelson&name=Erica**
 
-Document:
+### Document:
 
-how compound indexes improve performance
+#### How Compound Indexes Improve Performance
+- Queries using both fields (`city` + `name`) can use a single index  
+- Reduces document scans  
+- Improves execution time  
 
-how order matters
+#### Why Index Order Matters
+- `{ city: 1, name: 1 }` supports queries like:  
+  - `{ city: "Nelson" }`  
+  - `{ city: "Nelson", name: "Erica" }`  
+- But **does not** efficiently support queries like:  
+  - `{ name: "Erica" }` alone  
 
-C. Add large dataset seeder
-Create seedLargeUsers.js:
+Index order defines which query patterns are optimized.
 
-10k–50k documents
+---
 
-random names, cities, steps
+## C. Large Dataset Seeder
 
-Document:
+Create a file: **seedLargeUsers.js**
 
-performance before/after indexing
+### Insert 10k–50k Documents
+- Random names  
+- Random cities  
+- Random step counts  
 
-explain plan differences
+Example snippet:
+```js
+const users = [];
+
+for (let i = 0; i < 20000; i++) {
+  users.push({
+    name: faker.person.firstName(),
+    city: faker.location.city(),
+    steps: Math.floor(Math.random() * 15000)
+  });
+}
+
+await db.collection('users').insertMany(users);
+```
+
+### Document:
+
+#### Performance Before Indexing
+- COLLSCAN  
+- High `totalDocsExamined`  
+- Slow `executionTimeMillis`  
+
+#### Performance After Indexing
+- IXSCAN  
+- Low `totalDocsExamined`  
+- Faster execution  
+- Lower CPU usage  
+
+#### Explain Plan Differences
+- Compare `executionStats` before/after  
+- Show how indexes reduce scanned documents  
+- Show how compound indexes optimize multi‑field queries  
