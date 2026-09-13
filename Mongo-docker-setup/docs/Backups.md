@@ -15,7 +15,8 @@ mongorestore --db basicDB ./backups/basicDB-backup/basicDB
 
 ``
 
-![alt text](image-1.png)
+<img width="1153" height="441" alt="image" src="https://github.com/user-attachments/assets/90b61480-1301-4c0c-95d7-02c91d33a6e3" />
+
 
 Restoring to a database called 'basicDB_restore_test'
 
