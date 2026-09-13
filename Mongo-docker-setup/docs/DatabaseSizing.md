@@ -380,6 +380,11 @@ Example output:
 ```
 
 
+storageSize     | 20,480     | Disk space reserved for documents.
+totalIndexSize  | 20,480     | Disk space reserved for search indexes.
+avgObjSize      | 66         | Average size of one document.count4Total number of documents.
+
+
 ### B. Estimate Collection Growth
 Example:
 
