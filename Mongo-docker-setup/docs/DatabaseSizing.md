@@ -1,44 +1,37 @@
-A. Show how to check collection stats
-Code
+## Database Sizing Guide
+A. Check Collection Stats
 db.users.stats()
-Document:
 
-storageSize
+Fields:
+- storageSize
+- totalIndexSize
+- avgObjSize
+- count
 
-totalIndexSize
-
-avgObjSize
-
-count
-
-B. Show how to estimate growth
+### B. Estimate Collection Growth
 Example:
 
-If avgObjSize = 120 bytes
-And you expect 1M users:
+- avgObjSize = 120 bytes
+- expected users = 1,000,000
+- 120 bytes * 1,000,000 = 120 MB
 
-Code
-120 bytes * 1,000,000 = 120 MB
-Add index overhead:
-
-Code
+#### Index overhead:
 indexSize ≈ 40–60% of data size
-C. Show how to check database stats
-Code
+
+### C. Check Database Stats
 db.stats()
-Document:
 
-dataSize
+Fields:
+- dataSize
+- indexSize
+- fileSize
 
-indexSize
+### D. Atlas Sizing Notes (Cloud Version)
+Atlas manages:
 
-fileSize
+- cluster tier selection
+- storage auto‑scaling
+- performance vs cost
 
-D. Add Atlas sizing notes
-Explain:
-
-cluster tier selection
-
-storage auto‑scaling
-
-performance vs cost
+Cloud version:
+https://github.com/EricaB0123/mongodb-dba-project-atlas
