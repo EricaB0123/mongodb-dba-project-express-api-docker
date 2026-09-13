@@ -1,67 +1,67 @@
-## API Documentation
+# API Documentation
 
-### Overview
+## Overview  
+This API provides CRUD operations, indexing, and aggregation examples using MongoDB and Express. It follows a modular architecture consisting of routes, controllers, services, and configuration layers.
 
-This API provides CRUD operations, indexing, and aggregation examples using MongoDB and Express. It is part of a modular architecture consisting of routes, controllers, services, and configuration layers.
-
-## Server Status
+## Server Status  
 <img width="1007" height="109" alt="API Server Running" src="https://github.com/user-attachments/assets/b6b4594f-83ab-4878-9dba-1d833374b698" />
 
-## Example Request: GET /users/city/Nelson
+## Example Request: `GET /users/city/Nelson`  
 <img width="1252" height="175" alt="Testing GET users by city" src="https://github.com/user-attachments/assets/873f3a16-0281-448c-ae93-c4ef75c7dbdc" />
 
-## Seeding Data
+## Seeding Data  
 <img width="1058" height="106" alt="Inserted Data Using Seeds js File _Updatedjpg" src="https://github.com/user-attachments/assets/0c6a1532-1b2b-4729-8adc-c6774ef7935a" />
 
+---
 
+## Base URL  
+`http://localhost:3000`
 
+---
 
+# Endpoints
 
-#### Base URL
+## 1. Create User  
+**POST /users**
 
-http://localhost:3000
+Creates a new user document in the `users` collection.
 
-#### Endpoints
-
-1. Create User
-
-POST /users
-
-Creates a new user document in the users collection.
-
-Request Body
-
+### Request Body
+```
 {
   "name": "string",
   "city": "string",
   "steps": number
 }
+```
 
-Success Response
-
+### Success Response
+```
 {
   "acknowledged": true,
   "insertedId": "..."
 }
+```
 
-Error Response
-
+### Error Response
+```
 {
   "error": "Invalid user data"
 }
+```
 
-2. Get Users by City
+---
 
-GET /users/city/:city
+## 2. Get Users by City  
+**GET /users/city/:city**
 
 Returns all users matching the provided city.
 
-Example
+### Example  
+`GET /users/city/Nelson`
 
-GET /users/city/Nelson
-
-Success Response
-
+### Success Response
+```
 [
   {
     "name": "Erica",
@@ -69,28 +69,32 @@ Success Response
     "steps": 8500
   }
 ]
+```
 
-3. Create Index on City
+---
 
-POST /users/index/city
+## 3. Create Index on City  
+**POST /users/index/city**
 
-Creates a MongoDB index on the city field.
+Creates a MongoDB index on the `city` field.
 
-Success Response
-
+### Success Response
+```
 {
   "message": "City index created",
   "result": "city_1"
 }
+```
 
-4. City Statistics (Aggregation Pipeline)
+---
 
-GET /users/stats/cities
+## 4. City Statistics (Aggregation Pipeline)  
+**GET /users/stats/cities**
 
 Returns grouped statistics per city.
 
-Example Response
-
+### Example Response
+```
 [
   {
     "city": "Nelson",
@@ -100,56 +104,63 @@ Example Response
     "maxSteps": 8500
   }
 ]
+```
 
-Data Model
+---
 
-Collection: users
-Field
-Type
-Description
-name
-string
-User's name
-city
-string
-User's city
-steps
-number
-Daily step count
+# Data Model
 
-#### Indexes
+### Collection: `users`
 
-{ city: 1 } — created via /users/index/city
+| Field | Type   | Description        |
+|-------|--------|--------------------|
+| name  | string | User's name        |
+| city  | string | User's city        |
+| steps | number | Daily step count   |
 
-#### Architecture Summary
+### Indexes  
+- `{ city: 1 }` — created via `/users/index/city`
 
-- Routes define API endpoints
-- Controllers handle HTTP logic and validation
-- Services perform database operations
-- Config contains MongoDB client and environment variables
+---
 
-#### Environment Variables
+# Architecture Summary
 
+- Routes define API endpoints  
+- Controllers handle HTTP logic and validation  
+- Services perform database operations  
+- Config contains MongoDB client and environment variables  
+
+---
+
+# Environment Variables
+
+```
 MONGO_URI=
 MONGO_USER=
 MONGO_PASS=
 DB_NAME=
+```
 
-#### Testing
+---
 
-Endpoints can be tested using:
+# Testing
 
-Postman
-VS Code REST Client
-curl
+You can test endpoints using:
 
-Example:
+- Postman  
+- VS Code REST Client  
+- curl  
+
+### Example  
+```
 curl http://localhost:3000/users/city/Nelson
+```
 
-#### Setup
+---
 
-- Start MongoDB Docker container
-- Run seed scripts (optional)
-- Start the API
-- Test endpoints
+# Setup
 
+1. Start MongoDB Docker container  
+2. Run seed scripts (optional)  
+3. Start the API  
+4. Test endpoints
