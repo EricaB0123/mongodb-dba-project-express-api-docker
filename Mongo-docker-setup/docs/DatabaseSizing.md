@@ -429,9 +429,10 @@ basicDB> db.stats()
 }
 
 ```
-| --------        | --------       | --------                                                                                   |
-|fsUsedSize       | 63987007488    | The total used space on the entire hard drive/partition where MongoDB is installed (~64 GB)|
-|fsTotalSize      | 1081101176832: | The total capacity of that hard drive/partition (~1.08 TB).                                |
+|  Value            | Size | What it means |
+| --------        | --------       | -------- |                                                                                    
+|fsUsedSize       | 63987007488    | The total used space on the entire hard drive/partition where MongoDB is installed (~64 GB)
+|fsTotalSize      | 1081101176832: | The total capacity of that hard drive/partition (~1.08 TB).                                
 
 ### D. Atlas Sizing Notes (Cloud Version)
 Atlas manages:
