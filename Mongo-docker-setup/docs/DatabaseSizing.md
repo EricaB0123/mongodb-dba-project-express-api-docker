@@ -409,6 +409,30 @@ Fields:
 - indexSize
 - fileSize
 
+```
+basicDB> db.stats()
+{
+  db: 'basicDB',
+  collections: Long('1'),
+  views: Long('0'),
+  objects: Long('4'),
+  avgObjSize: 66.25,
+  dataSize: 265,
+  storageSize: 20480,
+  indexes: Long('1'),
+  indexSize: 20480,
+  totalSize: 40960,
+  scaleFactor: Long('1'),
+  fsUsedSize: 63987007488,
+  fsTotalSize: 1081101176832,
+  ok: 1
+}
+
+```
+| --------        | --------       | --------                                                                                   |
+|fsUsedSize       | 63987007488    | The total used space on the entire hard drive/partition where MongoDB is installed (~64 GB)|
+|fsTotalSize      | 1081101176832: | The total capacity of that hard drive/partition (~1.08 TB).                                |
+
 ### D. Atlas Sizing Notes (Cloud Version)
 Atlas manages:
 
