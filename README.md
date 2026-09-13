@@ -172,6 +172,54 @@ Includes:
 - (Soon) API responses  
 - (Soon) Atlas dashboard (in cloud repo)
 
+# Documentation Overview
+
+This project includes a full set of MongoDB and API documentation located in the **/docs** directory. Each file focuses on a specific aspect of database administration, performance, or API usage.
+
+## API.md
+Provides full documentation for all Express API endpoints, including request/response examples, index creation routes, aggregation routes, and usage notes.
+
+## Architecture.md
+Explains the project structure (routes, controllers, services, config), how components interact, and the overall flow of requests through the system.
+
+## Backups.md
+Covers MongoDB backup and restore strategies:
+- Logical backups (`mongodump`, `mongorestore`)
+- Docker volume snapshots
+- Atlas backup features
+- Comparison to SQL Server’s Ola Hallengren maintenance scripts
+
+## DataOperations.md
+Documents CRUD operations at the MongoDB shell level:
+- Insert operations (single, bulk, seed scripts)
+- Delete operations (deleteOne, deleteMany, delete by ID)
+- API delete endpoints
+- Notes on safe deletes, validation, and error handling
+
+## DatabaseSizing.md
+Provides guidance on estimating database size, growth patterns, document sizing, and how MongoDB storage engines impact disk usage.
+
+## QueryPerformance.md
+Focuses on performance tuning:
+- Explain plans (COLLSCAN vs IXSCAN)
+- Execution metrics (executionTimeMillis, nReturned, totalDocsExamined)
+- Compound index testing
+- Large dataset seeding (10k–50k docs)
+- Before/after indexing comparisons
+
+## SetupGuide.md
+Step‑by‑step instructions for setting up the project:
+- Docker MongoDB container
+- Environment variables
+- Installing dependencies
+- Seeding data
+- Starting the API server
+- Testing endpoints
+
+## Images/
+Contains all screenshots used throughout the documentation, including API tests, server status, explain plans, and backup examples.
+
+
 ---
 
 ## Roadmap
