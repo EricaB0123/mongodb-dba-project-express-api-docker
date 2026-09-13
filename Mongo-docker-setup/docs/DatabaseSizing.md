@@ -389,12 +389,17 @@ Example output:
 ### B. Estimate Collection Growth
 Example:
 
-- avgObjSize = 120 bytes
+- avgObjSize = 66 
 - expected users = 1,000,000
-- 120 bytes * 1,000,000 = 120 MB
+- 66 bytes * 1,000,000 = 66 MB
 
 #### Index overhead:
 indexSize ≈ 40–60% of data size
+
+Low end (40%): 66 MB × 0.40 = 26.4 MB
+High end (60%): 66 MB × 0.60 = 39.6 MB
+
+#### Total Estimated Storage: ~92.4 MB to 105.6 MB total disk space needed for 1 million documents.
 
 ### C. Check Database Stats
 db.stats()
